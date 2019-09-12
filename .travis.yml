@@ -8,17 +8,17 @@ language: java
 # A list of available JDKs in Trusty can be seed in:
 # https://docs.travis-ci.com/user/reference/trusty/#jvm-clojure-groovy-java-scala-images
 jdk:
- - maven:3.6.0-jdk-11-slim
-# - oraclejdk8
-# - oraclejdk9
+# - maven:3.6.0-jdk-11-slim
+ - oraclejdk8
+ - oraclejdk9
 
 # Each job in Travis CI has several steps:
 # https://docs.travis-ci.com/user/job-lifecycle/
 # The 'language: java' directive sets up sane defaults to test common java applications
 # We use the defaults for installing dependencies, compiling and testing maven applications
 # In our case it will be 'mvn install' followed by 'mvn test'
-#script: mvn clean verify
-script: mvn clean test
+script: mvn install
+script: mvn test
 # This is to enable CodeCov's coverage
 # If a build is successful, the code is submitted for coverage analysis
 #after_success:
